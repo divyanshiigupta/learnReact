@@ -1,23 +1,36 @@
-import React from "react"
+import React, { useState } from "react";
 
 const Box = (prop) => {
-    const { name, age, color } = prop
+  const { value } = prop;
+  const { name, age, color } = value;
+    const [col,setCol]=useState(color)
 
-    const handleClick = () => {
-        alert("the button is clicked")
-    }
-    return (
-        <div className="box" style={{ border: "2px solid gray", backgroundColor: color }}>
-            this is a box. My name is {name} and my age is {age}<br />
-            {/* {age>10 &&  <button onClick={handleClick}>click me</button> } */}
-            {age > 10 ? <button onClick={handleClick}>click me</button> : <button onClick={handleClick}>dont click me</button>}
+  const handleClick = () => {
+    
+  };
 
+  const handleChange=(event)=>{
+    
+  }
+  return (
+    <div
+      className="box"
+      style={{ border: "2px solid gray", backgroundColor: color }}
+    >
+      this is a box. My name is {name} and my age is {age} 
+      <br />
+      {/* {age>10 &&  <button onClick={handleClick}>click me</button> } */}
+      {age > 10 ? (
+        <button onClick={handleClick}>click me</button>
+      ) : (
+        <button onClick={handleClick}>dont click me</button>
+      )}
+      enter color<input type="text" onChange={handleChange}/> 
+    </div>
+  );
+};
 
-        </div>
-    )
-} 
-
-export default Box
+export default Box;
 
 // const obj={
 //     name:"divyanshi",
@@ -27,4 +40,3 @@ export default Box
 
 // const {name,age}=obj
 // console.log(name,age)
-
